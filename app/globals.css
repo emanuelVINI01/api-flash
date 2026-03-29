@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dracula-bg: #282a36;
+  --dracula-card: #44475a;
+  --dracula-fg: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-purple: #bd93f9;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-red: #ff5555;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-dracula-bg: var(--dracula-bg);
+  --color-dracula-card: var(--dracula-card);
+  --color-dracula-fg: var(--dracula-fg);
+  --color-dracula-comment: var(--dracula-comment);
+  --color-dracula-cyan: var(--dracula-cyan);
+  --color-dracula-purple: var(--dracula-purple);
+  --color-dracula-green: var(--dracula-green);
+  --color-dracula-orange: var(--dracula-orange);
+  --color-dracula-red: var(--dracula-red);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background-color: var(--dracula-bg);
+  color: var(--dracula-fg);
+  font-family: var(--font-geist-sans, Arial, sans-serif);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dracula-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dracula-card);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dracula-comment);
+}
+
+/* Selection */
+::selection {
+  background: var(--dracula-purple);
+  color: var(--dracula-fg);
 }
